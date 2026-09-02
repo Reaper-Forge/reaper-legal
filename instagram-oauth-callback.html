@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Instagram Authorization Complete | Reaper Legion</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/png" href="reaper-legion-app-icon-1024.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main><article class="policy">
+  <div class="eyebrow">Reaper Legion authorization</div>
+  <h1>Instagram authorization received</h1>
+  <p>This page does not transmit or store the authorization response. Return to the setup session that initiated authorization.</p>
+  <p id="status" class="notice">Checking authorization response…</p>
+</article></main>
+<script>
+  const q = new URLSearchParams(location.search);
+  const el = document.getElementById('status');
+  el.textContent = q.has('code') ? 'Authorization code received. You may return to the setup session.' : q.has('error') ? 'Authorization was not completed.' : 'Waiting for an authorization response.';
+  history.replaceState({}, document.title, location.pathname);
+</script>
+</body></html>
